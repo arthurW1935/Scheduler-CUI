@@ -25,6 +25,9 @@ class Scheduler:
       print("Incorrect Input! Event could not be added! Please Try Again!\n")
   
   def delete_event(self):
+    if len(self.schedule_table)==1:
+      print("Your schedule table is empty!")
+      return
     self.show()
     theevent = input("Enter the serial number of the event which you want to delete\n")
     for i in range(len(self.schedule_table)):
@@ -35,6 +38,9 @@ class Scheduler:
       print("The serial number was not found! pLease try again!\n")
   
   def modify_event (self):
+    if len(self.schedule_table)==1:
+      print("Your schedule table is empty!")
+      return
     self.show()
     serial = input("Enter the serial number of the event which you want to modify\n")
     for i in range(len(self.schedule_table)):
